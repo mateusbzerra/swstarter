@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 237 237 237;
+  --foreground: 255 255 255;
+  --primary: 10 180 99;
+  --dark-grey: 218 218 218;
+  --pinkish-grey: 196 196 196;
+  --warm-grey: 132 132 132;
+  --gainsboro: 218 218 218;
+  --emerald: 8 153 84;
+}
+
+input[type="text"] {
+  box-shadow: inset 0 1px 3px 0 rgba(132,132,132, 0.75);
+}
+
+@layer components {
+  .card {
+    box-shadow: 0px 1px 2px 0 rgba(var(--warm-grey), 0.75);
+    border-radius: 4px;
+  }
+}
+
+html {
+  --background: var(--background);
+  --foreground: var(--foreground);
+  --primary: var(--primary);
+  --dark-grey: var(--dark-grey);
+  --pinkish-grey: var(--pinkish-grey);
+  --warm-grey: var(--warm-grey);
+  --gainsboro: var(--gainsboro);
+  --emerald: var(--emerald);
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", serif;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+html, body, #root {
+  height: 100%;
+}
