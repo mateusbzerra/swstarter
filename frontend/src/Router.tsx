@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Home } from "./pages/Home/Home";
 import { MainLayout } from "./layouts/MainLayout";
+import { People } from "./pages/People/People";
 
 export const Router = () => {
   return (
@@ -8,6 +9,7 @@ export const Router = () => {
       <Routes>
         <Route element={<MainLayout />}>
           <Route index element={<Home />} />
+          <Route path="/people/:id" element={<People />} />
         </Route>
       </Routes>
     </BrowserRouter>

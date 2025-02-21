@@ -1,4 +1,4 @@
-import { SearchRequestProps } from "@/data/get-search-results";
+import { SearchRequestProps } from "@/data/star-wars/types";
 import { Button } from "@/ui/Button";
 import { Card } from "@/ui/Card";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -23,13 +23,9 @@ export const SearchFormCard = ({
     },
   });
 
-  console.log({ isDirty });
-
   const onSubmit: SubmitHandler<SearchRequestProps> = (data) => {
     onSubmitSearch(data);
   };
-
-  console.log({ errors });
 
   return (
     <Card>

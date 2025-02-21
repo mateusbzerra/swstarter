@@ -7,7 +7,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className="w-full h-[34px] px-5 rounded-[20px] border bg-primary border-primary disabled:border-pinkish-grey disabled:bg-pinkish-grey text-white uppercase font-bold hover:bg-emerald"
+      className="w-full h-[34px] px-5 rounded-[20px] border bg-primary border-primary disabled:border-pinkish-grey disabled:bg-pinkish-grey text-white text-sm uppercase font-bold hover:bg-emerald"
       {...buttonProps}
     >
       {children}

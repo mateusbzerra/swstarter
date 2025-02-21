@@ -5,7 +5,9 @@ export const MainLayout = () => {
   return (
     <div className="h-full bg-background">
       <Header />
-      <Outlet />
+      <div className="w-full max-w-[1022px] mx-auto pt-[30px]">
+        <Outlet />
+      </div>
     </div>
   );
 };

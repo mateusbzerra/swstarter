@@ -1,9 +1,5 @@
-const API_URL = "https://swapi.py4e.com/api/";
-
-export interface SearchRequestProps {
-  searchTerm: string;
-  searchType: "people" | "films";
-}
+import { API_URL } from "./config";
+import { SearchRequestProps } from "./types";
 
 export const getSearchResults = async ({
   searchTerm,
