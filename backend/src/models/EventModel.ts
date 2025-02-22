@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const EventSchema = new mongoose.Schema(
+export const EventSchema = new mongoose.Schema(
   {
     name: String,
     requestUrl: String,

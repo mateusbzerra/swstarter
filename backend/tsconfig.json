@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
+    "baseUrl": "",
+    "paths": {
+      "@/*": ["src/*"]
+    },
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "es6",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "build",
-    "baseUrl": "src",
+    "outDir": "dist",
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"],
-  "files": ["src/index.d.ts"]
+  }
 }
