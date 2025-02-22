@@ -15,7 +15,7 @@ export const SearchFormCard = ({
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty },
+    formState: { errors, isDirty, isValid },
   } = useForm<SearchRequestProps>({
     defaultValues: {
       searchTerm: "",
@@ -29,7 +29,7 @@ export const SearchFormCard = ({
 
   return (
     <Card>
-      <h3 className="font-semibold text-[#383838] mb-5">
+      <h3 className="font-semibold text-cloud-grey mb-5">
         What are you searching for?
       </h3>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -66,7 +66,7 @@ export const SearchFormCard = ({
 
         <div className="mb-5">
           <input
-            className="w-full h-10 rounded-[4px] p-2 inset-shadow-md border border-pinkish-grey "
+            className="w-full h-10 rounded-[4px] p-2 inset-shadow-md border border-pinkish-grey outline-none"
             type="text"
             placeholder="e.g. Chewbacca, Yoda, Boba Fett"
             {...register("searchTerm", { required: true })}
@@ -82,7 +82,7 @@ export const SearchFormCard = ({
             Please choose between People or Movies
           </span>
         )}
-        <Button disabled={!isDirty || isLoading} type="submit">
+        <Button disabled={!isDirty || isLoading || !isValid} type="submit">
           {isLoading ? "Searching..." : "Search"}
         </Button>
       </form>

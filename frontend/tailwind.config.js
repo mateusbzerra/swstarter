@@ -12,6 +12,7 @@ export default {
         "warm-grey": "rgb(var(--warm-grey))",
         gainsboro: "rgb(var(--gainsboro))",
         emerald: "rgb(var(--emerald))",
+        "cloud-grey": "rgb(var(--cloud-grey))",
       },
     },
   },

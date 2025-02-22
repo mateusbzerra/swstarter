@@ -16,14 +16,13 @@ export const Home = () => {
     enabled: searchParams !== undefined,
   });
 
-  console.log({ data, isLoading });
   const onSubmitSearch = (data: SearchRequestProps) => {
     setSearchParams(data);
   };
 
   return (
-    <div className="flex gap-x-[30px]">
-      <div className="w-full max-w-[410px]">
+    <div className="flex flex-wrap md:flex-nowrap gap-y-9 px-3 gap-x-[30px] md:px-0">
+      <div className="w-full md:max-w-[410px]">
         <SearchFormCard isLoading={isLoading} onSubmitSearch={onSubmitSearch} />
       </div>
 
