@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { Link, useParams } from "react-router";
 import { FilmNameLink } from "./components/FilmNameLink";
+import { CardSkeleton } from "@/components/CardSkeleton";
 
 export const People = () => {
   const params = useParams();
@@ -17,8 +18,6 @@ export const People = () => {
     enabled: personId !== undefined,
   });
 
-  console.log({ data });
-
   if (!isLoading && (!personId || !data?.success)) {
     return (
       <div className="font-bold text-center text-lg">Person not found</div>
@@ -28,40 +27,15 @@ export const People = () => {
   const person = data?.person;
 
   if (isLoading) {
-    return (
-      <Card>
-        <div className="grid grid-cols-2 gap-x-4">
-          <div className="w-full space-y-3">
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-          </div>
-          <div className="w-full space-y-3">
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-            <div className="w-full h-2 bg-background rounded-sm animate-pulse"></div>
-          </div>
-        </div>
-      </Card>
-    );
+    return <CardSkeleton />;
   }
 
   return (
-    <div className="w-full max-w-[804px] mx-auto">
+    <div className="w-full max-w-[804px] mx-auto px-3 md:px-0">
       <Card>
-        <div className="w-full min-h-[417px]">
+        <div className="w-full min-h-[287px]">
           <h1 className="font-bold text-lg mb-[30px]">{person?.name}</h1>
-          <div className="flex flex-wrap items-start justify-between">
+          <div className="flex flex-wrap items-start justify-between gap-y-6">
             <div className="w-full max-w-[322px]">
               <h2 className="font-bold border-b border-pinkish-grey pb-3 mb-1">
                 Details
@@ -87,7 +61,7 @@ export const People = () => {
             </div>
           </div>
         </div>
-        <Link to="/" className="self-start">
+        <Link to="/" className="self-start mt-[30px]">
           <Button>Back to Search</Button>
         </Link>
       </Card>
