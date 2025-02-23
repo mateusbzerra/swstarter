@@ -15,6 +15,7 @@ export const SearchFormCard = ({
   const {
     register,
     handleSubmit,
+    getValues,
     formState: { errors, isDirty, isValid },
   } = useForm<SearchRequestProps>({
     defaultValues: {
@@ -68,7 +69,11 @@ export const SearchFormCard = ({
           <input
             className="w-full h-10 rounded-[4px] p-2 inset-shadow-md border border-pinkish-grey outline-none"
             type="text"
-            placeholder="e.g. Chewbacca, Yoda, Boba Fett"
+            placeholder={
+              getValues("searchType") === "people"
+                ? "e.g. Chewbacca, Yoda, Boba Fett"
+                : "e.g. A New Hope, Return of the Jedi"
+            }
             {...register("searchTerm", { required: true })}
           />
           {errors.searchTerm && (
