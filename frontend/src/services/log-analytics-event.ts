@@ -5,7 +5,7 @@ interface Event {
   requestTimeEnded: Date;
 }
 
-const EVENTS_QUEUE_URL = "http://localhost:3333/events";
+const EVENTS_QUEUE_URL = "http://localhost:3001/events";
 
 export const logAnalyticsEvent = async (props: Event) => {
   const { requestTimeStarted, requestTimeEnded, ...event } = props;

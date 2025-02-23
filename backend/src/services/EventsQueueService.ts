@@ -17,7 +17,12 @@ export default class EventsQueueService {
 
     EventsQueueService.instance = this;
 
-    const newQueue = new Bull(Queues.EVENTS);
+    const newQueue = new Bull(Queues.EVENTS, {
+      redis: {
+        host: process.env.REDIS_HOST || "localhost",
+        port: Number(process.env.REDIS_PORT || 6379),
+      },
+    });
     this.eventsQueue = newQueue;
     this.eventsQueue.process(eventController.createNewEvent);
   }
