@@ -22,13 +22,6 @@ export const SearchResultsContent = ({
   data,
   searchType,
 }: Props) => {
-  if (!searchType) {
-    return (
-      <ResultMessageWrapper>
-        <p>Please select People or Movies option</p>
-      </ResultMessageWrapper>
-    );
-  }
   if (isLoading) {
     return (
       <ResultMessageWrapper>
@@ -42,6 +35,14 @@ export const SearchResultsContent = ({
       <ResultMessageWrapper>
         <p>There are zero matches.</p>
         <p>Use the form to search for People or Movies.</p>
+      </ResultMessageWrapper>
+    );
+  }
+
+  if (!searchType) {
+    return (
+      <ResultMessageWrapper>
+        <p>Please select People or Movies option</p>
       </ResultMessageWrapper>
     );
   }
